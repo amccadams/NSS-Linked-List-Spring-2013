@@ -2,12 +2,20 @@ class LinkedListItem
   attr_reader :next_list_item
   attr_reader :payload
 
-  def initialize( payload )
+  def initialize(something)
+    @payload = something
   end
 
   def next_list_item= (linked_list_item)
+  if linked_list_item==self
+   raise ArgumentError
+  else
+   @next_list_item= linked_list_item
+  end
   end
 
-  def last?
+  def last? 
+@next_list_item.nil?
+ 
   end
 end

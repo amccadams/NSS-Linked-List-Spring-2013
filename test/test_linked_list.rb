@@ -5,15 +5,31 @@ class LinkedListItemTest < Test::Unit::TestCase
 
   def test_06_add_item_get_item
     ll = LinkedList.new
+    payload = "foo"
+    ll.add_item(payload)
+    assert_equal(payload, ll.get(0))
+  end
+
+  def test_06b_add_item_get_item
+    ll = LinkedList.new
     ll.add_item("foo")
+    ll.add_item("bar")
     assert_equal("foo", ll.get(0))
   end
+
+  def test_06c_add_item_get_item
+    ll = LinkedList.new
+    ll.add_item("foo")
+    ll.add_item("bar")
+    assert_equal("bar", ll.get(1))
+   end
 
   def test_07_add_multiple_items_get_item
     ll = LinkedList.new
     ll.add_item("foo")
     ll.add_item("bar")
     ll.add_item("grille")
+    ll.add_item("zoo")
     assert_equal("grille", ll.get(2))
   end
 
