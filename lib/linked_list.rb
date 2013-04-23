@@ -58,11 +58,10 @@ end
       end
     "|#{payloads} |"
   end
- 
 
   # ========= Bonus ========== #
 
-  def [](payload)
+   def [](payload)
   end
 
   def []=(n, payload)
@@ -70,5 +69,24 @@ end
 
   def remove(n)
   end
+
+    # ========= Index exercise ========== #
+
+    def indexOf(index_payload)
+      i = 0
+      if @first_item.nil?
+        return nil
+      else
+        item = @first_item
+         until index_payload == item.payload
+          item = item.next_list_item
+          i+=1
+          if item.nil? 
+            return nil
+          end
+        end
+      end
+      i
+    end
 
 end
