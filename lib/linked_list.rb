@@ -76,7 +76,7 @@ end
       i = 0
       if @first_item.nil?
         return nil
-      else
+      end
         item = @first_item
          until index_payload == item.payload
           item = item.next_list_item
@@ -85,8 +85,24 @@ end
             return nil
           end
         end
-      end
+     
       i
     end
+      # ========= Sorting Exercise ========== #
+
+  def sorted? 
+    # i = 0
+    item = @first_item
+    if item.nil?
+      return true
+    end
+  end
+
+  def sort
+  end
+
+  # This is a helper I implemented
+  def swap_with_next i
+  end
 
 end
